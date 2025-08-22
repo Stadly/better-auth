@@ -25,7 +25,7 @@ export interface MicrosoftOptions
 	 */
 	tenantId?: string;
 	/**
-	 * TODO: Document this.
+	 * The authentication authority URL. Use "https://login.microsoftonline.com" for standard Entra ID or "https://<tenant-id>.ciamlogin.com" for CIAM scenarios.
 	 * @default "https://login.microsoftonline.com"
 	 */
 	authority?: string;
