@@ -25,6 +25,11 @@ export interface MicrosoftOptions
 	 */
 	tenantId?: string;
 	/**
+	 * TODO: Document this.
+	 * @default "https://login.microsoftonline.com"
+	 */
+	authority?: string;
+	/**
 	 * The size of the profile photo
 	 * @default 48
 	 */
@@ -37,8 +42,9 @@ export interface MicrosoftOptions
 
 export const microsoft = (options: MicrosoftOptions) => {
 	const tenant = options.tenantId || "common";
-	const authorizationEndpoint = `https://login.microsoftonline.com/${tenant}/oauth2/v2.0/authorize`;
-	const tokenEndpoint = `https://login.microsoftonline.com/${tenant}/oauth2/v2.0/token`;
+	const authority = options.authority || "https://login.microsoftonline.com";
+	const authorizationEndpoint = `${authority}/${tenant}/oauth2/v2.0/authorize`;
+	const tokenEndpoint = `${authority}/${tenant}/oauth2/v2.0/token`;
 	return {
 		id: "microsoft",
 		name: "Microsoft EntraID",

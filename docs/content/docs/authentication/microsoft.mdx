@@ -29,6 +29,7 @@ Enabling OAuth with Microsoft Azure Entra ID (formerly Active Directory) allows 
                 clientSecret: process.env.MICROSOFT_CLIENT_SECRET as string, // [!code highlight]
                 // Optional
                 tenantId: 'common', // [!code highlight]                
+                authority: "https://login.microsoftonline.com", // TODO describe // [!code highlight]
                 prompt: "select_account", // Forces account selection // [!code highlight]
             }, // [!code highlight]
         },
